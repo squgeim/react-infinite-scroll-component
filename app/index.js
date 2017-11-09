@@ -133,7 +133,7 @@ export default class InfiniteScroll extends Component {
   }
 
   onScrollListener (event) {
-    if (this.props.onScroll === 'function') {
+    if (typeof this.props.onScroll === 'function') {
       // Execute this callback in next tick so that it does not affect the
       // functionality of the library.
       setTimeout(() => this.props.onScroll(event), 0);
