@@ -133,6 +133,9 @@ export default class InfiniteScroll extends Component {
   }
 
   onScrollListener (event) {
+    typeof this.props.onScroll === 'function' &&
+      this.props.onScroll(event);
+
     let target = this.props.height
       ? event.target
       : (document.documentElement.scrollTop ? document.documentElement : document.body);
@@ -231,4 +234,5 @@ InfiniteScroll.propTypes = {
   releaseToRefreshContent: PropTypes.node,
   pullDownToRefreshThreshold: PropTypes.number,
   refreshFunction: PropTypes.func,
+  onScroll: PropTypes.func,
 };
