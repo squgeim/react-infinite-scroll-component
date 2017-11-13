@@ -30,8 +30,6 @@ export default class InfiniteScroll extends Component {
     this.el = this.props.height ? this._infScroll : window;
     this.el.addEventListener('scroll', this.throttledOnScrollListener);
 
-    console.log(this.el.scrollHeight);
-
     if (
       typeof this.props.initialScrollY === 'number' &&
       this.el.scrollHeight > this.props.initialScrollY
